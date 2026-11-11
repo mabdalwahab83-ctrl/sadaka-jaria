@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية على روح المرحوم الحاج / حليم عبدالوهاب زايد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #0a3622;
+            --secondary-green: #14532d;
+            --accent-gold: #d4af37;
+            --light-gold: #f3e5ab;
+            --bg-color: #f4f7f4;
+            --card-bg: #ffffff;
+            --text-main: #2b2b2b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(10, 54, 34, 0.1);
+            overflow: hidden;
+            border: 2px solid var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            color: var(--light-gold);
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .deceased-section {
+            text-align: center;
+            padding: 20px 15px;
+            background: #fafafa;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .deceased-img-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-gold);
+            padding: 3px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            background: white;
+        }
+
+        .deceased-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .deceased-name {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .dua-text {
+            font-size: 0.95rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        .counter-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dhikr-selector {
+            margin-bottom: 15px;
+        }
+
+        .dhikr-selector select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+            background: #fff;
+            color: var(--primary-green);
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dhikr-selector select:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .dhikr-display {
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            color: var(--primary-green);
+            margin: 15px 0;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+        }
+
+        .tasbih-btn {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            border: 6px solid var(--accent-gold);
+            border-radius: 50%;
+            color: white;
+            font-size: 2.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(10, 54, 34, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            transition: all 0.1s ease;
+            outline: none;
+        }
+
+        .tasbih-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 5px 15px rgba(10, 54, 34, 0.2);
+        }
+
+        .tasbih-btn span {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: var(--light-gold);
+            margin-top: 5px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+
+        .btn-reset {
+            background-color: #fde8e8;
+            color: #9b1c1c;
+        }
+
+        .btn-reset:hover {
+            background-color: #fbd5d5;
+        }
+
+        .total-counter {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .total-counter span {
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.85rem;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>صدقة جارية</h1>
+            <p>اللهم اجعل هذا العمل نوراً لبرزخه</p>
+        </header>
+
+        <div class="deceased-section">
+            <div class="deceased-img-container">
+                <img src="1305.jpg" alt="الحاج / حليم عبدالوهاب زايد">
+            </div>
+            <div class="deceased-name">المرحوم الحاج / حليم عبدالوهاب زايد</div>
+            <div class="dua-text">"اللهم ارحمه واغفر له وأسكنه فسيح جناتك"</div>
+        </div>
+
+        <div class="counter-section">
+            <div class="dhikr-selector">
+                <select id="dhikrSelect" onchange="changeDhikr()">
+                    <option value="سُبْحَانَ اللَّهِ">سُبْحَانَ اللَّهِ</option>
+                    <option value="الْحَمْدُ لِلَّهِ">الْحَمْدُ لِلَّهِ</option>
+                    <option value="لَا إِلَهَ إِلَّا اللَّهُ">لَا إِلَهَ إِلَّا اللَّهُ</option>
+                    <option value="اللَّهُ أَكْبَرُ">اللَّهُ أَكْبَرُ</option>
+                    <option value="سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ</option>
+                    <option value="لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ</option>
+                    <option value="أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ">أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ</option>
+                    <option value="اللهم صل وسلم على نبينا محمد">اللهم صل وسلم على نبينا محمد</option>
+                </select>
+            </div>
+
+            <div class="dhikr-display" id="dhikrDisplay">سُبْحَانَ اللَّهِ</div>
+
+            <button class="tasbih-btn" onclick="incrementCounter()">
+                <span id="currentCount">0</span>
+                <span>اضغط للتسبيح</span>
+            </button>
+
+            <div class="controls">
+                <button class="btn btn-reset" onclick="resetCounter()">
+                    <i class="fas fa-redo"></i> إصفرار العدّاد
+                </button>
+            </div>
+
+            <div class="total-counter">
+                إجمالي التسبيحات المستمرة: <span id="totalCount">0</span>
+            </div>
+        </div>
+
+        <footer>
+            نسألكم الدعاء له بالرحمة والمغفرة
+        </footer>
+    </div>
+
+    <script>
+        let currentCount = 0;
+        let totalCount = parseInt(localStorage.getItem('total_halim')) || 0;
+
+        document.getElementById('totalCount').innerText = totalCount;
+
+        function changeDhikr() {
+            const select = document.getElementById('dhikrSelect');
+            document.getElementById('dhikrDisplay').innerText = select.value;
+            currentCount = 0;
+            document.getElementById('currentCount').innerText = currentCount;
+        }
+
+        function incrementCounter() {
+            currentCount++;
+            totalCount++;
+            document.getElementById('currentCount').innerText = currentCount;
+            document.getElementById('totalCount').innerText = totalCount;
+            localStorage.setItem('total_halim', totalCount);
+
+            // اهتزاز خفيف عند الضغط إن وجد في الهاتف
+            if (navigator.vibrate) {
+                navigator.vibrate(40);
+            }
+        }
+
+        function resetCounter() {
+            if(confirm("هل تريد تصفير عداد الذكر الحالي؟")) {
+                currentCount = 0;
+                document.getElementById('currentCount').innerText = currentCount;
+            }
+        }
+    </script>
+</body>
+</html>
